@@ -1,0 +1,18 @@
+{
+  "name": "vetteintel-c7-sticker-harvester",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --test-scheduled",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create vetteintel-c7-stickers",
+    "db:migrate:local": "wrangler d1 migrations apply vetteintel-c7-stickers --local",
+    "db:migrate:remote": "wrangler d1 migrations apply vetteintel-c7-stickers --remote",
+    "r2:create": "wrangler r2 bucket create vetteintel-c7-stickers",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^4.24.0"
+  }
+}

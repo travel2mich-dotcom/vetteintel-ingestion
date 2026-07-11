@@ -1,0 +1,38 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "vetteintel-ingestion",
+	"main": "src/index.js",
+	"compatibility_date": "2026-07-01",
+	"workers_dev": true,
+	"observability": {
+		"enabled": true
+	},
+	"vars": {
+		"SOURCE_ENABLED": "true",
+		"SOURCE_DELAY_MS": "1500",
+		"BATCH_SIZE": "5",
+		"MAX_ASSET_BYTES": "15000000",
+		"ADMIN_ORIGIN": "*"
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "vetteintel-ingestion",
+			"database_id": "307a2bd0-91a9-4ca5-8c40-a2a1fb20668f",
+			"migrations_dir": "migrations",
+			"remote": true
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "STICKERS",
+			"bucket_name": "vetteintel-ingestion",
+			"remote": true
+		}
+	],
+	"triggers": {
+		"crons": [
+			"*/15 * * * *"
+		]
+	}
+}
