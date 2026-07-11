@@ -18,7 +18,7 @@ export default {
       if (url.pathname === "/health") {
         return json({
           ok: true,
-          service: "vetteintel-c7-sticker-harvester",
+          service: "vetteintel-ingestion",
           version: "0.2.0",
           source_enabled: env.SOURCE_ENABLED === "true"
         }, 200, env);
@@ -541,3 +541,4 @@ function cors(response, env) {
   headers.set("access-control-allow-methods", "GET,POST,OPTIONS");
   return new Response(response.body, { status: response.status, headers });
 }
+
