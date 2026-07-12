@@ -1,7 +1,7 @@
 
 const SOURCE_ID = "cac-zr1-registry";
 const SOURCE_BASE = "https://www.corvetteactioncenter.com/specs/c7-corvette/corvette-zr1-registry/";
-const INDEX_URL = `${SOURCE_BASE}index.php`;
+const INDEX_URL = `${SOURCE_BASE}2019-corvette-zr1.php`;
 const PROFILE_PATTERN = /showprofile\.php\?id=([^"'&#<>\s]+)/gi;
 const VIN_PATTERN = /\b[1-5][A-HJ-NPR-Z0-9]{16}\b/gi;
 const PARTIAL_PATTERN = /\bK580\d{4}\b/gi;
@@ -541,4 +541,5 @@ function cors(response, env) {
   headers.set("access-control-allow-methods", "GET,POST,OPTIONS");
   return new Response(response.body, { status: response.status, headers });
 }
+
 
